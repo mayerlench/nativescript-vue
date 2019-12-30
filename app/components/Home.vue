@@ -32,12 +32,15 @@
     import SelectedPageService from "../shared/selected-page-service";
 
     export default {
+        data:{
+            hello: 'world'
+        },
         mounted() {
             SelectedPageService.getInstance().updateSelectedPage("Home");
         },
         computed: {
             message() {
-                return "<!-- Page content goes here -->";
+                return "<!-- Page content goes here -->" + this.$store.state.test.count;
             }
         },
         methods: {
